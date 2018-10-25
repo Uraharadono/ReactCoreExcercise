@@ -7,7 +7,33 @@ namespace ReactCoreExcercise.DatabaseMock
 
     public class EmployeeDataAccessLayer
     {
-        List<EmployeeViewModel> employees = new List<EmployeeViewModel>();
+        List<EmployeeViewModel> employees = new List<EmployeeViewModel>
+        {
+            new EmployeeViewModel
+            {
+                EmployeeId= 1,
+                Name= "test 1",
+                City= "test 1",
+                Department= "test 1",
+                Gender= "test 1",
+            },
+            new EmployeeViewModel
+            {
+                EmployeeId= 2,
+                Name= "test 2",
+                City= "test 2",
+                Department= "test 2",
+                Gender= "test 2",
+            },
+            new EmployeeViewModel
+            {
+                EmployeeId=3,
+                Name = "test 3",
+                City= "test 3",
+                Department= "test 3",
+                Gender= "test 3"
+            }
+        };
 
         public IEnumerable<EmployeeViewModel> GetAllEmployees()
         {
@@ -40,7 +66,7 @@ namespace ReactCoreExcercise.DatabaseMock
             {
                 for (int i = 0; i < employees.Count; i++)
                 {
-                    if (employees[i].EmployeeID == employee.EmployeeID)
+                    if (employees[i].EmployeeId == employee.EmployeeId)
                     {
                         employees[i].Name = employee.Name;
                         employees[i].City = employee.City;
@@ -61,7 +87,7 @@ namespace ReactCoreExcercise.DatabaseMock
         {
             try
             {
-                EmployeeViewModel employee = employees.FirstOrDefault(s => s.EmployeeID == id);
+                EmployeeViewModel employee = employees.FirstOrDefault(s => s.EmployeeId == id);
                 return employee;
             }
             catch
@@ -74,7 +100,7 @@ namespace ReactCoreExcercise.DatabaseMock
         {
             try
             {
-                EmployeeViewModel emp = employees.Find(s => s.EmployeeID == id);
+                EmployeeViewModel emp = employees.Find(s => s.EmployeeId == id);
                 employees.Remove(emp);
                 return 1;
             }
@@ -88,10 +114,10 @@ namespace ReactCoreExcercise.DatabaseMock
         public List<CityViewModel> GetCities()
         {
             List<CityViewModel> lstCity = new List<CityViewModel>();
-            var cty1 = new CityViewModel { CityID = 1, CityName = "Nesto 1" };
-            var cty2 = new CityViewModel { CityID = 2, CityName = "Nesto 2" };
-            var cty3 = new CityViewModel { CityID = 3, CityName = "Nesto 3" };
-            var cty4 = new CityViewModel { CityID = 4, CityName = "Nesto 4" };
+            var cty1 = new CityViewModel { CityId = 1, CityName = "Nesto 1" };
+            var cty2 = new CityViewModel { CityId = 2, CityName = "Nesto 2" };
+            var cty3 = new CityViewModel { CityId = 3, CityName = "Nesto 3" };
+            var cty4 = new CityViewModel { CityId = 4, CityName = "Nesto 4" };
             lstCity.Add(cty1);
             lstCity.Add(cty2);
             lstCity.Add(cty3);

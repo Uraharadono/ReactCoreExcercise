@@ -1,3 +1,4 @@
+/* eslint-disable */
 export class EmployeeData {
     constructor(data) {
         this.employeeId;

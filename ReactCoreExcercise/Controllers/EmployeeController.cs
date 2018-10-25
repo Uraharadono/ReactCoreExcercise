@@ -9,48 +9,48 @@ namespace ReactCoreExcercise.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        EmployeeDataAccessLayer objemployee = new EmployeeDataAccessLayer();
+        EmployeeDataAccessLayer employeeDal = new EmployeeDataAccessLayer();
 
         [HttpGet]
         [Route("api/Employee/Index")]
         public IEnumerable<EmployeeViewModel> Index()
         {
-            return objemployee.GetAllEmployees();
+            return employeeDal.GetAllEmployees();
         }
 
         [HttpPost]
         [Route("api/Employee/Create")]
         public int Create(EmployeeViewModel employee)
         {
-            return objemployee.AddEmployee(employee);
+            return employeeDal.AddEmployee(employee);
         }
 
         [HttpGet]
         [Route("api/Employee/Details/{id}")]
         public EmployeeViewModel Details(int id)
         {
-            return objemployee.GetEmployeeData(id);
+            return employeeDal.GetEmployeeData(id);
         }
 
         [HttpPut]
         [Route("api/Employee/Edit")]
         public int Edit(EmployeeViewModel employee)
         {
-            return objemployee.UpdateEmployee(employee);
+            return employeeDal.UpdateEmployee(employee);
         }
 
         [HttpDelete]
         [Route("api/Employee/Delete/{id}")]
         public int Delete(int id)
         {
-            return objemployee.DeleteEmployee(id);
+            return employeeDal.DeleteEmployee(id);
         }
 
         [HttpGet]
         [Route("api/Employee/GetCityList")]
         public IEnumerable<CityViewModel> Details()
         {
-            return objemployee.GetCities();
+            return employeeDal.GetCities();
         }
     }
 }

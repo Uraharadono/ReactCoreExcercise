@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
 
 export class FetchEmployee extends Component {
 
@@ -24,7 +26,7 @@ export class FetchEmployee extends Component {
             <h1>Employee Data</h1>
             <p>This component demonstrates fetching Employee data from the server.</p>
             <p>
-                {/* <Link to="/addemployee">Create New</Link> */}
+                <Link to="/addemployee">Create New</Link>
             </p>
             {contents}
         </div>;
@@ -75,8 +77,8 @@ export class FetchEmployee extends Component {
                         <td>{emp.department}</td>
                         <td>{emp.city}</td>
                         <td>
-                            <a className="action" onClick={(id) => this.handleEdit(emp.employeeId)}>Edit</a>  |
-                            <a className="action" onClick={(id) => this.handleDelete(emp.employeeId)}>Delete</a>
+                            <a href="#" className="action" onClick={(id) => this.handleEdit(emp.employeeId)}>Edit</a>  |
+                            <a href="#" className="action" onClick={(id) => this.handleDelete(emp.employeeId)}>Delete</a>
                         </td>
                     </tr>
                 )}
